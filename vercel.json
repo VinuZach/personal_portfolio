@@ -5,9 +5,13 @@
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
-         {
+      {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/"
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/static/fonts/(.*)",
+      "dest": "/staticfiles/fonts/$1"
     },
         {
             "src": "/(.*)",
