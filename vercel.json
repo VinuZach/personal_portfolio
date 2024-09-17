@@ -7,11 +7,11 @@
     "routes": [
       {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
+      "dest": "/static/*"
     },
     {
       "src": "/static/fonts/(.*)",
-      "dest": "/staticfiles/fonts/$1"
+      "dest": "/static/fonts/*"
     },
         {
             "src": "/(.*)",
