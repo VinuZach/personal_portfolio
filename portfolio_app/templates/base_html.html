@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @font-face {
+    font-family: 'JockeyOne';
+    src: url("/static/fonts/JockeyOne-Regular.otf");
+}
+  @font-face {
+    font-family: 'JosifSlab_light';
+    src: url("/static/fonts/JosefinSlab-Light.ttf");
+
+}
+
+  @font-face {
+    font-family: 'JosifSlab_bold';
+    src: url("/static/fonts/JosefinSlab-Bold.ttf");
+
+}
+
+  @font-face {
+    font-family: 'JosifSlab_Regular';
+    src: url("/static/fonts/JosefinSlab-Regular.ttf");
+
+}
+
+html{
+    width: 100%;
+    height: 100%;
+
+}
+body
+{
+
+    margin-top:60px;
+}
+#index_options
+{
+position: absolute;
+    display: flex;
+    margin-left:90px;
+    flex-direction: column;
+    bottom: 5%;
+}
+    #index_options > a
+    {
+        text-decoration: none;
+        font-size:25px;
+        margin: 5px;
+         color:black;
+        font-family:JosifSlab_light
+    }
+    #index_options > a:hover
+    {
+        font-family:JosifSlab_bold;
+        padding-left:20px
+    }
+
+    .social_media:hover {
+        height:27px;
+    }
+      body {
+  background: #F3F0EC;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+
+  color: white;
+
+  font-weight: 700;
+}
+ @media only screen and (max-width: 1080px)
+ {
+
+     .pc
+    {
+   visibility: hidden;
+
+    }
+body
+{
+
+    margin:0px;
+    padding:0px 10px;
+        overflow-y: auto;
+}
+      .size_width_1080
+    {
+    display:block;
+    }
+ }
+
+  .menu_item_nav
+        {
+             display:block;
+             font-size:50px;
+
+        }
+ @media only screen and (min-width: 1080px)
+ {
+
+    .pc
+    {
+    display:block;
+    }
+
+      .size_width_1080
+    {
+    display:none;
+    }
+ }
+    .header_text
+    {
+        margin:0;
+        font-family:JockeyOne;
+        font-size:50px;
+    }
+    .content_text
+    {
+        margin:0;
+        font-family:JosifSlab_Regular;
+        font-size:20px;
+    }
+    #mob_close_menu{
+        font-size: 75px;
+        display:none;
+        margin-right:40px
+    }
+    #size_width_1080_menu_options
+    {
+        display: none;
+        flex-direction: column;
+        font-family: JosifSlab_light;
+        font-size:25px;
+        margin-top:50px;
+        align-items: center;
+    }
+   .social_media
+        {
+        height:30px;
+
+        }
+
+    .mob_media_link{
+        display: flex;
+        justify-content: space-between;
+        margin-top:20px;
+        align-items: center;
+        width: 110px;
+    }
+    @media (pointer:coarse)
+     {
+        .mob_media_link{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #size_width_1080_menu_options
+        {
+            display: none;
+            flex-direction: column;
+            font-family: JosifSlab_light;
+            font-size:60px;
+            margin-top:100px;
+            align-items: center;
+        }
+        #mob_close_menu
+        {
+            font-size: 120px;
+            display:none;
+            margin-right:40px
+        }
+
+         .header_text
+        {
+            margin:0;
+            font-family:JockeyOne;
+            font-size:100px;
+        }
+            .content_text
+            {
+                margin:0;
+                font-family:JosifSlab_Regular;
+                font-size:60px;
+            }
+
+        .menu_item_nav
+        {
+             display:block;
+             font-size:80px;
+
+        }
+        .social_media
+        {
+            height:80px;
+            margin:20px 30px;
+
+        }
+         .social_media:hover {
+                height:80px;
+            }
+
+     }
+
+</style>
+
+<body>
+
+
+{% block details %}
+
+{% endblock %}
+<div id="profile_details_header" style="background: white;    width: 100%;    height: fit-content;    position: fixed;
+    padding:20px 10px;
+    color:black;
+    left:0;
+    top: 0;" class="size_width_1080">
+    <div style="display: flex;
+    justify-content: space-between;
+    align-items: center;" >
+         <div style="margin-left:20px">
+          <p class="header_text">Vinu P Zachariah</p>
+          <p class="content_text">Software Engineer</p>
+        </div >
+        <span id="mob_open_menu" class="menu_item_nav" onclick="openNav()" style="margin-right:40px">&#9776;</span>
+
+        <span id="mob_close_menu"  onclick="closeNav()">&#10799;</span>
+    </div>
+
+<div id="size_width_1080_menu_options">
+
+      <a href="#size_width_1080_tech_stack" style="margin:10px;    text-decoration: none;">Tech Stack</a>
+      <a href="#size_width_1080_recent_project" style="    text-decoration: none;">Recent Projects</a>
+
+       <div id="mob_media_link">
+     <a href="mailto:mathewzchrh603@gmail.com"><img class="social_media"  src="{{ request.scheme }}://{{ request.get_host }}//media/gmail.svg" ></a>
+        <a href="https://github.com/VinuZach">   <img  class="social_media" src="{{ request.scheme }}://{{ request.get_host }}//media/github.svg" ></a>
+        <a href="https://linkedin.com/in/vinu-p-zachariah-a63496125">  <img class="social_media" src="{{ request.scheme }}://{{ request.get_host }}//media/linkedin.svg"></a>
+    </div>
+</div>
+</div>
+
+
+<!--    -------------------------------------------------------------------------------->
+
+
+<div id="index_options" class="pc">
+ <div onclick="manualSlideToPosition(0)"><img class="social_media"  src="{{ request.scheme }}://{{ request.get_host }}//media/home_icon.png" ></div>
+                <a href="#" onclick="manualSlideToPosition(1)">Tech Stack</a>
+
+                <a href="#" onclick="manualSlideToPosition(2)">Recent Projects</a>
+                <a href="#" onclick="manualSlideToPosition(0)"></a>
+    
+
+    <div style="display: flex;justify-content: space-between;margin-top:20px;align-items: center;width: 110px;">
+     <a href="mailto:mathewzchrh603@gmail.com"><img class="social_media"  src="{{ request.scheme }}://{{ request.get_host }}//media/gmail.svg" ></a>
+        <a href="https://github.com/VinuZach">   <img  class="social_media"  src="{{ request.scheme }}://{{ request.get_host }}//media/github.svg" ></a>
+        <a href="https://linkedin.com/in/vinu-p-zachariah-a63496125">  <img class="social_media" src="{{ request.scheme }}://{{ request.get_host }}//media/linkedin.svg"></a>
+    </div>
+</div>
+
+<script>
+
+    function openNav()
+    {
+          document.getElementById("size_width_1080_menu_options").style.display = "flex";
+          document.getElementById("mob_open_menu").style.display = "none";
+          document.getElementById("mob_close_menu").style.display = "block";
+    }
+
+    function closeNav()
+    {
+        document.getElementById("size_width_1080_menu_options").style.display = "none";
+        document.getElementById("mob_open_menu").style.display = "block";
+        document.getElementById("mob_close_menu").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

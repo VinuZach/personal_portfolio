@@ -1,0 +1,635 @@
+{% extends "base_html.html" %}
+{% block details %}
+
+<style>
+  .image_option_size
+                {
+                height:40px;width:50px;margin:6px;
+                }
+
+    .details_visible
+    {
+        display:block;
+    }
+    .box
+    {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        color: black;
+        margin-left:100px;
+    }
+
+    #targets {
+        position: absolute;
+        width: 290%;
+        display: flex;
+    }
+
+    #stage {
+        width: 100%;
+        display: flex;
+        height: 73%;
+        align-items: center;
+    }
+    .jockey_one_50_px
+    {
+        font-family:JockeyOne;
+        font-size:50px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        gap: 10px;
+        padding: 10px;
+    }
+    .item {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 10px;
+        font-family:JosifSlab_light;
+        font-size: 14px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+    .grid-container>div
+    {
+        padding: 50px 10px 12px 10px;
+    }
+
+    .horizontal_padding
+    {
+        margin:0px 5px;
+        padding:20px 40px;
+    }
+
+    .item:hover
+    {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        background:black;
+        color:white;
+        font-family:JosifSlab_bold;
+    }
+    .project_item{
+        padding: 10px 10px;
+        border: 1px black solid;
+        margin: 0px 5px;
+        min-width: 200px;
+        display: flex;
+        text-align: center;
+        border-radius: 20px;
+        color:white;background:black;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project_item:hover
+    {
+        padding: 10px 10px;
+        border: 1px black solid;
+        margin: 0px 5px;
+        min-width: 200px;
+        display: flex;
+        text-align: center;
+        border-radius: 20px;
+        color:black;background:transparent;
+        align-items: center;
+        justify-content: center;
+    }
+    @media only screen and (max-width: 1080px)
+    {
+        #stage
+        {
+            display:none;
+        }
+    }
+
+    .sticky
+    {
+        position: sticky;
+        top: 20px;
+        color: white;
+        padding: 10px;
+    }
+    .mob_experience_details
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 4%;
+    }
+
+       #size_width_1080_project_tech
+            {
+                margin-top: 40px;
+                display:flex;
+
+            }
+        #size_width_1080_project_title{
+            font-family:JockeyOne;
+            margin-top: 15px;
+            font-size:50px;
+            margin-bottom:30px;
+        }
+
+            #size_width_1080_proj_main_img {
+                 max-width: 65%;  border: 1px solid black;border-radius:10px;margin-bottom:40px;
+            }
+    @media (pointer:coarse)
+    {
+
+        #size_width_1080_proj_main_img {
+                 max-width: 95%;
+                  border: 1px solid black;
+                  border-radius:10px;
+                  margin-top:40px;
+                  margin-bottom:40px;
+            }
+        #size_width_1080_project_title
+        {
+            font-family:JockeyOne;
+            margin-top: 80px;
+            font-size:50px;
+            margin-bottom:30px;
+        }
+        #size_width_1080_project_tech
+        {
+            margin-top: 40px;
+            display:flex;
+            font-size:35px;
+        }
+         .project_item{
+            padding: 10px 50px;
+            border: 1px black solid;
+            margin: 0px 5px;
+            min-width: 500px;
+            display: flex;
+            font-size:50px;
+            text-align: center;
+            border-radius: 20px;
+            color:white;background:black;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project_item:hover
+        {
+            padding: 10px 50px;
+            border: 1px black solid;
+            margin: 0px 5px;
+            min-width: 500px;
+            display: flex;
+            font-size:50px;
+            text-align: center;
+            border-radius: 20px;
+            color:black;background:transparent;
+            align-items: center;
+            justify-content: center;
+        }
+        .mob_experience_details
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-top: 20%;
+            font-size:100px;
+        }
+        .jockey_one_50_px
+        {
+            font-family:JockeyOne;
+            font-size:90px;
+        }
+
+          .image_option_size
+                {
+                height:160px;
+                width:160px;
+                margin:10px;
+                }
+    }
+</style>
+<div class="size_width_1080" style="color:black;margin-top:150px;padding:30px;width: 100%;">
+
+    <div class="mob_experience_details">
+               <div style="margin:50px">
+                    <span class="jockey_one_50_px">{{no_of_projects}}</span><br><span style="font-family:JosifSlab_Regular;">Projects</span>
+              </div>
+             <div style="margin:50px">
+                <span class="jockey_one_50_px">{{years_of_experience}}</span><br><span style="font-family:JosifSlab_Regular;">years of experience</span>
+            </div>
+             <div style="margin:50px">
+                <span id="size_width_1080_tech_stack" class="jockey_one_50_px">Clients From</span><br><span  style="font-family:JosifSlab_Regular;">India,Oman,Dubai</span>
+            </div>
+   </div>
+    <div  style="    display: flex;
+    flex-direction: column;margin-top: 150px;">
+        <p  class="jockey_one_50_px" style="text-align: center">Tech Stack</p>
+        <div>
+
+            <span class="jockey_one_50_px" style="font-size:30px;margin-bottom:20px;">Web</span>
+               <div class="grid-container" style="  grid-template-columns: auto auto auto auto ;margin-right:40px">
+                        <div class="item" >Django</div>
+                        <div class="item">Python</div>
+                        <div class="item">HTML</div>
+                        <div class="item">CSS</div>
+               </div>
+
+        </div>
+  <span class="jockey_one_50_px" style="font-size:30px;margin-top:50px">Android</span>
+
+        <div class="grid-container" style="  grid-template-columns: auto auto auto  ;margin-right:40px">
+                    <div class="item">Java</div>
+                    <div class="item">Kotlin</div>
+                    <div class="item">XML<br>Jetpack compose</div>
+               </div>
+  <hr width="40%" style="margin-top: 25px;
+    margin-bottom: 25px;">
+         <div class="grid-container" style="  grid-template-columns: auto auto auto;margin-right:40px">
+            <div class="item horizontal_padding">Websocket</div>
+            <div class="item horizontal_padding">RestApi</div>
+            <div class="item horizontal_padding">GraphQl</div>
+            <div class="item horizontal_padding">Firebase</div>
+            <div class="item horizontal_padding">Git/Github</div>
+            <div class="item horizontal_padding">SQL</div>
+         </div>
+
+    </div>
+
+    <div>
+          <p id="size_width_1080_recent_project" class="jockey_one_50_px" style="text-align: center">Recent Project</p>
+  <div id="size_width_1080_project_list" style="display:flex;overflow-x: auto;padding:10px; background:#F3F0EC;   max-width: 90%;position:sticky;top:0;z-index:1000">
+        {% for item in result %}
+
+        <div class="project_item " onclick="size_width_1080_display_project_details({{item}})">
+            <div >{{item.project.name}}</div>
+        </div>
+         {% endfor %}
+
+    </div>
+
+
+        <div style="margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;">
+
+              <div id="size_width_1080_project_tech" >
+
+                </div>
+            <div id="size_width_1080_project" style="margin: 20px 0px; ">
+
+                    <div id="size_width_1080_project_title" style=""></div>
+
+                  <div id="size_width_1080_project_content" style="font-family:JosifSlab_Regular;     max-width: 90%;   font-size:20px;"></div>
+            </div>
+
+
+            <div id="size_width_1080_project_images_options" style="display:flex;">
+
+
+            </div>
+
+           <img id="size_width_1080_proj_main_img"   src=""></div>
+        </div>
+    </div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------->
+<div id="stage" class="pc">
+  <div id="targets">
+    <div class="box box1">
+
+        <p style="margin:0;font-family:JockeyOne;    font-size:50px;">Vinu P Zachariah</p>
+       <p style="margin:0;font-family:JosifSlab_Regular;    font-size:20px;">Software Engineer</p>
+
+        <div style="display: flex;    flex-direction: row;    justify-content: flex-end;    margin-top: 4%;">
+               <div style="margin:50px">
+                    <span  class="jockey_one_50_px">{{no_of_projects}}</span><br><span style="font-family:JosifSlab_Regular;">Projects</span>
+              </div>
+             <div style="margin:50px">
+                <span class="jockey_one_50_px">{{years_of_experience}}</span><br><span style="font-family:JosifSlab_Regular;">years of experience</span>
+            </div>
+             <div style="margin:50px">
+                <span class="jockey_one_50_px">Clients From</span><br><span id="client_location_text" style="font-family:JosifSlab_Regular;">India,Oman,Dubai</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="box box2">
+        <div style="display: flex;
+                    justify-content: space-between;
+                    flex-direction: row;">
+            <div>
+                <span class="jockey_one_50_px" style="font-size:30px;">Web</span>
+            </div>
+            <div>
+                    <span class="jockey_one_50_px" style="font-size:30px;">Android</span>
+            </div>
+
+
+        </div>
+          <div class="grid-container">
+                  <div class="item" >Django</div>
+                  <div class="item">Python</div>
+                  <div class="item" style="visibility:hidden">3</div>
+                  <div class="item" style="visibility:hidden">4</div>
+                  <div class="item">Java</div>
+                  <div class="item">Kotlin</div>
+                 <div class="item" style="visibility:hidden">6</div>
+                 <div class="item">HTML</div>
+                 <div class="item">CSS</div>
+                 <div class="item" style="visibility:hidden">6</div>
+                <div class="item">XML<br>Jetpack compose</div>
+
+          </div>
+        <hr width="40%" style="margin-top: 25px;
+    margin-bottom: 25px;">
+        <div style="display: flex;
+    flex-direction: row;
+
+    justify-content: center;">
+               <div class="item horizontal_padding">Websocket</div>
+            <div class="item horizontal_padding">RestApi</div>
+            <div class="item horizontal_padding">GraphQl</div>
+            <div class="item horizontal_padding">Firebase</div>
+            <div class="item horizontal_padding">Git/Github</div>
+            <div class="item horizontal_padding">SQL</div>
+        </div>
+    </div>
+    <div class="box box3" >
+<div style="display: flex;
+    flex-direction: column;
+        align-items: flex-end;
+">
+     <div style="display: flex;justify-content: flex-start;    width: 100%;">
+            <div>
+                <div style="display:flex;align-items: flex-end;">
+                    <div id="project_images_options" style="display:flex;align-items: flex-end;    flex-direction: column;">
+
+                    </div>
+
+                    <img style="  border: 1px solid black;height: 300px;width: 180px;margin: 0px 10px;1px #8080807a solid;border-radius: 10px;display:none" id="proj_main_img" src="{{ request.scheme }}://{{ request.get_host }}{{MEDIA_URL}}static_images/campus.jpg">
+
+                </div>
+
+            </div>
+            <div style="margin-left:20px;width:100%">
+                <div id="project_tech" style="margin:0px 40px;display:flex;">
+
+                </div>
+                    <div id="project_title" style="font-family:JockeyOne;margin-top: 15px;    font-size:50px;margin-bottom:30px;">Recent Projects</div>
+
+                  <div id="project_content" style="font-family:JosifSlab_Regular;     max-width: 70%;   font-size:20px;"></div>
+
+            </div>
+
+
+
+        </div>
+    <div style="display:flex;overflow-x: auto;padding:10px;    max-width: 40%;">
+        {% for item in result %}
+
+        <div class="project_item" onclick="display_project_details({{item}})">
+            <div >{{item.project.name}}</div>
+        </div>
+         {% endfor %}
+
+    </div>
+</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+<script>
+
+
+
+        function size_width_1080_display_project_details(projectDetails)
+        {
+            proj_title=document.getElementById('size_width_1080_project_title');
+            proj_technologies=document.getElementById('size_width_1080_project_tech');
+            proj_content=document.getElementById('size_width_1080_project_content');
+
+
+            project_main_image=document.getElementById('size_width_1080_proj_main_img');
+            project_main_image.style.display = "block";
+            project_option_images=document.getElementById('size_width_1080_project_images_options');
+
+            proj_technologies.replaceChildren();
+            var technologiesUsed=projectDetails.tech
+            for(var i=0;i<technologiesUsed.length;i++)
+            {
+                let node =document.createElement("div");
+
+                node.style='padding:10px 25px;    border:1px black solid;     border-radius:20px;     margin:0px 5px;'
+                node.innerHTML=technologiesUsed[i].tech_id__name
+                proj_technologies.appendChild(node)
+            }
+            project_main_image.src="{{ request.scheme }}://{{ request.get_host }}/media/"+projectDetails.images[0].imageData;
+
+
+            project_option_images.replaceChildren();
+            var projectImages=projectDetails.images
+            for(var i=0;i<projectImages.length;i++)
+            {
+                var image=projectImages[i].imageData
+                let imageElement =document.createElement("img");
+                let node =document.createElement("div");
+                node.onclick = function ()
+                {
+                    project_main_image.src="{{ request.scheme }}://{{ request.get_host }}/media/"+this.getAttribute("data");
+                };
+
+                node.setAttribute('data', image);
+                imageElement.src="{{ request.scheme }}://{{ request.get_host }}/media/"+image;
+                imageElement.style=''
+
+                imageElement.classList.add("image_option_size");
+                node.appendChild(imageElement)
+                project_option_images.appendChild(node)
+            }
+
+
+
+            if(projectDetails.project.project_link.length>0)
+            {
+              proj_title.innerHTML=projectDetails.project.project_link
+            }
+            else
+            {
+              proj_title.innerHTML=projectDetails.project.name
+            }
+
+
+            proj_content.innerHTML=projectDetails.project.description
+
+        }
+
+
+    function display_project_details(projectDetails)
+    {
+      proj_title=document.getElementById('project_title');
+      proj_technologies=document.getElementById('project_tech');
+  proj_content=document.getElementById('project_content');
+
+      project_main_image=document.getElementById('proj_main_img');
+      project_main_image.style.display = "block";
+      project_option_images=document.getElementById('project_images_options');
+
+      proj_technologies.replaceChildren();
+      var technologiesUsed=projectDetails.tech
+      for(var i=0;i<technologiesUsed.length;i++)
+      {
+        let node =document.createElement("div");
+
+        node.style='padding:10px 25px;     border:1px black solid;     border-radius:20px;     margin:0px 5px;'
+        node.innerHTML=technologiesUsed[i].tech_id__name
+        proj_technologies.appendChild(node)
+      }
+       project_main_image.src="{{ request.scheme }}://{{ request.get_host }}/media/"+projectDetails.images[0].imageData;
+
+
+        project_option_images.replaceChildren();
+       var projectImages=projectDetails.images
+        for(var i=0;i<projectImages.length;i++)
+      {
+
+      var image=projectImages[i].imageData
+        let imageElement =document.createElement("img");
+        let node =document.createElement("div");
+           node.onclick = function () {
+            project_main_image.src="{{ request.scheme }}://{{ request.get_host }}/media/"+this.getAttribute("data");
+
+};
+node.setAttribute('data', image);
+        imageElement.src="{{ request.scheme }}://{{ request.get_host }}/media/"+image;
+        imageElement.style='height:40px;width:50px;margin:5px 2px;'
+
+        node.appendChild(imageElement)
+        project_option_images.appendChild(node)
+      }
+
+  if(projectDetails.project.project_link.length>0)
+            {
+              proj_title.innerHTML=projectDetails.project.project_link
+            }
+            else
+            {
+              proj_title.innerHTML=projectDetails.project.name
+            }
+
+      proj_content.innerHTML=projectDetails.project.description
+
+    }
+
+
+
+
+  TweenLite.defaultEase = Power2.easeInOut;
+
+  var activeSlide = 0;
+var oldSlide = 0;
+var slides = document.querySelectorAll(".box");
+var tl;
+
+function slideAnim(e) {
+
+
+  // if the container is animating the wheel won't work
+
+  if (tl && tl.isActive()) {
+    return;
+  }
+  // temp variable to see if we're at the beginning or end
+  oldSlide = activeSlide;
+  // which way did we scroll the mousewheel
+  activeSlide = e.deltaY > 0 ? (activeSlide += 1) : (activeSlide -= 1);
+  // are we at the beginning of the slides?
+  activeSlide = activeSlide < 0 ? 0 : activeSlide;
+  // are we at the end of the slides?
+  activeSlide = activeSlide > slides.length - 1 ? slides.length - 1 : activeSlide;
+
+for (let i = 0; i < slides.length; i++) {
+if(activeSlide==i)
+ slides[i].style.visibility = "visible";
+else
+ slides[i].style.visibility = "hidden";
+
+
+}
+
+  // if at the beginning or end there is nothing to animate
+  if (oldSlide === activeSlide) {
+    return;
+  }
+  // if not at the beginning or end, we can animate the container
+  // and the targets to the new position
+  tl = new TimelineMax();
+  tl.to("#targets", 0.4, { xPercent: -100/slides.length * activeSlide });
+
+}
+
+
+
+function manualSlideToPosition(index) {
+console.log("new asd")
+  // if the container is animating the wheel won't work
+
+  if (tl && tl.isActive()) {
+    return;
+  }
+  // temp variable to see if we're at the beginning or end
+  oldSlide = 0;
+  // which way did we scroll the mousewheel
+  activeSlide = index
+for (let i = 0; i < slides.length; i++) {
+if(activeSlide==i)
+ slides[i].style.visibility = "visible";
+else
+ slides[i].style.visibility = "hidden";
+
+
+}
+
+  // if not at the beginning or end, we can animate the container
+  // and the targets to the new position
+  tl = new TimelineMax();
+  tl.to("#targets", 0.4, { xPercent: -100/slides.length * activeSlide });
+
+}
+
+
+
+
+// listen for mousewheel scroll
+window.addEventListener("wheel", slideAnim);
+
+document.addEventListener('scroll', function() {
+    var stickyHeader = document.getElementById('profile_details_header');
+    var stopSection = document.getElementById('size_width_1080_project');
+    var stopSectionOffset = stopSection.offsetTop+200;
+
+    var scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition > stopSectionOffset) {
+        stickyHeader.style.position = 'absolute'; // or 'relative' if needed
+
+    } else {
+        stickyHeader.style.position = 'fixed';
+
+    }
+});
+
+
+</script>
+{% endblock %}
+
