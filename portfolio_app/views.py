@@ -10,7 +10,7 @@ from .serializers import *
 
 # Create your views here.
 no_of_projects = "30+"
-years_of_experience = "8"
+years_of_experience = "7"
 
 
 def home_page(request):

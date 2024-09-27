@@ -4,7 +4,8 @@
 <style>
   .image_option_size
                 {
-                height:40px;width:50px;margin:6px;
+                height:140px;
+                width:100px;margin:6px;
                 }
 
     .details_visible
@@ -24,6 +25,7 @@
         position: absolute;
         width: 290%;
         display: flex;
+
     }
 
     #stage {
@@ -213,22 +215,40 @@
 
           .image_option_size
                 {
-                height:160px;
+                height:200px;
                 width:160px;
                 margin:10px;
                 }
     }
+
+    .horizontal_opacity_animation {
+
+  animation: mymove 2s forwards;
+   position: relative;
+}
+
+@keyframes mymove
+{
+  from {
+        opacity:0;
+        left: -150px;
+        }
+  to {
+        opacity:1;
+        left: 0px;
+        }
+}
 </style>
 <div class="size_width_1080" style="color:black;margin-top:150px;padding:30px;width: 100%;">
 
     <div class="mob_experience_details">
-               <div style="margin:50px">
+               <div style="margin:50px" class="horizontal_opacity_animation">
                     <span class="jockey_one_50_px">{{no_of_projects}}</span><br><span style="font-family:JosifSlab_Regular;">Projects</span>
               </div>
-             <div style="margin:50px">
+             <div style="margin:50px" class="horizontal_opacity_animation">
                 <span class="jockey_one_50_px">{{years_of_experience}}</span><br><span style="font-family:JosifSlab_Regular;">years of experience</span>
             </div>
-             <div style="margin:50px">
+             <div style="margin:50px" class="horizontal_opacity_animation">
                 <span id="size_width_1080_tech_stack" class="jockey_one_50_px">Clients From</span><br><span  style="font-family:JosifSlab_Regular;">India,Oman,Dubai</span>
             </div>
    </div>
@@ -317,13 +337,13 @@
        <p style="margin:0;font-family:JosifSlab_Regular;    font-size:20px;">Software Engineer</p>
 
         <div style="display: flex;    flex-direction: row;    justify-content: flex-end;    margin-top: 4%;">
-               <div style="margin:50px">
+               <div style="margin:50px" class="horizontal_opacity_animation">
                     <span  class="jockey_one_50_px">{{no_of_projects}}</span><br><span style="font-family:JosifSlab_Regular;">Projects</span>
               </div>
-             <div style="margin:50px">
+             <div style="margin:50px" class="horizontal_opacity_animation">
                 <span class="jockey_one_50_px">{{years_of_experience}}</span><br><span style="font-family:JosifSlab_Regular;">years of experience</span>
             </div>
-             <div style="margin:50px">
+             <div style="margin:50px" class="horizontal_opacity_animation">
                 <span class="jockey_one_50_px">Clients From</span><br><span id="client_location_text" style="font-family:JosifSlab_Regular;">India,Oman,Dubai</span>
             </div>
         </div>
@@ -522,7 +542,7 @@
 };
 node.setAttribute('data', image);
         imageElement.src="{{ request.scheme }}://{{ request.get_host }}/media/"+image;
-        imageElement.style='height:40px;width:50px;margin:5px 2px;'
+        imageElement.style='height:60px;width:70px;margin:5px 2px;'
 
         node.appendChild(imageElement)
         project_option_images.appendChild(node)
@@ -637,6 +657,11 @@ document.addEventListener('scroll', function() {
         stickyHeader.style.position = 'fixed';
 
     }
+});
+
+window.addEventListener('load', () => {
+console.log(document.getElementById('targets').style)
+
 });
 
 
