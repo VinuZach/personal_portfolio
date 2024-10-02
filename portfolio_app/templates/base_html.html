@@ -64,7 +64,7 @@ position: absolute;
         height:27px;
     }
       body {
-  background: #F3F0EC;
+background:url('{{ request.scheme }}://{{ request.get_host }}//media/background_image2.jpg');
   display: flex;
   height: 100vh;
   width: 100%;
@@ -120,12 +120,14 @@ body
         margin:0;
         font-family:JockeyOne;
         font-size:50px;
+             color: #09446f;
     }
     .content_text
     {
         margin:0;
         font-family:JosifSlab_Regular;
         font-size:20px;
+             color: #09446f;
     }
     #mob_close_menu{
         font-size: 75px;
@@ -156,6 +158,10 @@ body
     }
     @media (pointer:coarse)
      {
+         body {
+        background:url('{{ request.scheme }}://{{ request.get_host }}//media/background_image_mob.jpg');
+        background-repeat: no-repeat;
+}
         .mob_media_link{
             display: flex;
             justify-content: space-between;
@@ -183,6 +189,7 @@ body
             margin:0;
             font-family:JockeyOne;
             font-size:100px;
+
         }
             .content_text
             {
@@ -211,7 +218,7 @@ body
 
 </style>
 
-<body>
+<body >
 
 
 {% block details %}
@@ -252,7 +259,7 @@ body
 
 
 <div id="index_options" class="pc">
- <div onclick="manualSlideToPosition(0)"><img class="social_media"  src="{{ request.scheme }}://{{ request.get_host }}//media/home_icon.png" ></div>
+ <div onclick="manualSlideToPosition(0)"><img style="height:20px;margin:10px;" src="{{ request.scheme }}://{{ request.get_host }}//media/home_icon.png" ></div>
                 <a href="#" onclick="manualSlideToPosition(1)">Tech Stack</a>
 
                 <a href="#" onclick="manualSlideToPosition(2)">Recent Projects</a>

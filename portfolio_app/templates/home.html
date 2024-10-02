@@ -195,7 +195,8 @@
             font-size:50px;
             text-align: center;
             border-radius: 20px;
-            color:black;background:transparent;
+            color:black;
+            background:transparent;
             align-items: center;
             justify-content: center;
         }
@@ -288,7 +289,7 @@
 
     <div>
           <p id="size_width_1080_recent_project" class="jockey_one_50_px" style="text-align: center">Recent Project</p>
-  <div id="size_width_1080_project_list" style="display:flex;overflow-x: auto;padding:10px; background:#F3F0EC;   max-width: 90%;position:sticky;top:0;z-index:1000">
+  <div id="size_width_1080_project_list" style="display:flex;overflow-x: auto;padding:10px;  max-width: 90%;position:sticky;top:0;z-index:1000">
         {% for item in result %}
 
         <div class="project_item " onclick="size_width_1080_display_project_details({{item}})">
